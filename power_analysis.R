@@ -171,26 +171,27 @@ piedf<-read.csv("yourfolder/piedf.txt",sep="\t")
 frass<-read.csv("yourfolder/frass.txt",sep="\t")
 
 
-par(mfrow=c(3,2),mar=c(2,2,2,2))
+par(mfrow=c(3,2),mar=c(4,4,2,2),cex.lab=1.2)
 
-barplot(c(length(which(greti$latslopediff.P<=0.05))/length(na.omit(greti[,1])),c(length(which(piedf$latslopediff.P<=0.05))/length(na.omit(piedf[,1])))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
+barplot(c(length(which(bluti$latslopediff.P<=0.05))/length(na.omit(bluti[,1])),length(which(greti$latslopediff.P<=0.05))/length(na.omit(greti[,1])),length(which(piedf$latslopediff.P<=0.05))/length(na.omit(piedf[,1])),length(which(frass$latslopediff.P<=0.05))/length(na.omit(frass[,1]))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
 
-mtext(side=3,adj=0,"a) latitudinal slope difference",cex=0.8)
+mtext(side=3,adj=0,"a) latitudinal slope difference",cex=0.8,line=1)
 
 plot(NULL,NULL)
 
-barplot(c(length(which(greti$space.cor.P <=0.05))/length(na.omit(greti[,1])),c(length(which(piedf$space.cor.P<=0.05))/length(na.omit(piedf[,1])))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
+barplot(c(length(which(bluti$space.cor.P <=0.05))/length(na.omit(bluti[,1])),length(which(greti$space.cor.P <=0.05))/length(na.omit(greti[,1])),length(which(piedf$space.cor.P <=0.05))/length(na.omit(piedf[,1])),length(which(frass$space.cor.P <=0.05))/length(na.omit(frass[,1]))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
 
-mtext(side=3,adj=0,"b) spatial correlation",cex=0.8)
+mtext(side=3,adj=0,"b) spatial correlation",cex=0.8,line=1)
 
-barplot(c(length(which(greti$Ma.space.P....1 <=0.05))/length(na.omit(greti[,1])),c(length(which(piedf$Ma.space.P....1<=0.05))/length(na.omit(piedf[,1])))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
+barplot(c(length(which(bluti$Ma.space.P....1 <=0.05))/length(na.omit(bluti[,1])),length(which(greti$Ma.space.P....1 <=0.05))/length(na.omit(greti[,1])),length(which(piedf$Ma.space.P....1 <=0.05))/length(na.omit(piedf[,1])),length(which(frass$Ma.space.P....1 <=0.05))/length(na.omit(frass[,1]))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
 
-mtext(side=3,adj=0,"c) spatial major axis",cex=0.8)
+mtext(side=3,adj=0,"c) spatial major axis",cex=0.8,line=1)
 
-barplot(c(length(which(greti$time.cor.P <=0.05))/length(na.omit(greti[,1])),c(length(which(piedf$time.cor.P<=0.05))/length(na.omit(piedf[,1])))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
+barplot(c(length(which(bluti$time.cor.P <=0.05))/length(na.omit(bluti[,1])),length(which(greti$time.cor.P <=0.05))/length(na.omit(greti[,1])),length(which(piedf$time.cor.P <=0.05))/length(na.omit(piedf[,1])),length(which(frass$time.cor.P <=0.05))/length(na.omit(frass[,1]))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
 
-mtext(side=3,adj=0,"d) temporal correlation",cex=0.8)
+mtext(side=3,adj=0,"d) temporal correlation",cex=0.8,line=1)
 
-barplot(c(length(which(greti$Ma.time.p....1<=0.05))/length(na.omit(greti[,1])),c(length(which(piedf$Ma.time.p....1<=0.05))/length(na.omit(piedf[,1])))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
+barplot(c(length(which(bluti$Ma.time.p....1 <=0.05))/length(na.omit(bluti[,1])),length(which(greti$Ma.time.p....1 <=0.05))/length(na.omit(greti[,1])),length(which(piedf$Ma.time.p....1 <=0.05))/length(na.omit(piedf[,1])),length(which(frass$Ma.time.p....1 <=0.05))/length(na.omit(frass[,1]))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
 
-mtext(side=3,adj=0,"e) temporal major axis",cex=0.8)
+mtext(side=3,adj=0,"e) temporal major axis",cex=0.8,line=1)
+
