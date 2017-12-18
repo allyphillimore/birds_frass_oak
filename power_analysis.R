@@ -173,25 +173,48 @@ frass<-read.csv("yourfolder/frass.txt",sep="\t")
 
 par(mfrow=c(3,2),mar=c(4,4,2,2),cex.lab=1.2)
 
-barplot(c(length(which(bluti$latslopediff.P<=0.05))/length(na.omit(bluti[,1])),length(which(greti$latslopediff.P<=0.05))/length(na.omit(greti[,1])),length(which(piedf$latslopediff.P<=0.05))/length(na.omit(piedf[,1])),length(which(frass$latslopediff.P<=0.05))/length(na.omit(frass[,1]))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
+barplot(c(length(intersect(which(bluti$latslopediff.P<=0.05),which(bluti$slope.diff<0)))/length(na.omit(bluti[,1])),
+length(intersect(which(greti$latslopediff.P<=0.05),which(greti$slope.diff<0)))/length(na.omit(greti[,1])),
+length(intersect(which(piedf$latslopediff.P<=0.05),which(piedf$slope.diff<0)))/length(na.omit(piedf[,1])),
+length(intersect(which(frass$latslopediff.P<=0.05),which(frass$slope.diff<0)))/length(na.omit(frass[,1])))
+,names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
 
-mtext(side=3,adj=0,"a) latitudinal slope difference",cex=0.8,line=1)
+mtext(side=3,adj=0,"a) latitudinal slope difference ",cex=0.8,line=1)
 
 plot(NULL,NULL)
 
-barplot(c(length(which(bluti$space.cor.P <=0.05))/length(na.omit(bluti[,1])),length(which(greti$space.cor.P <=0.05))/length(na.omit(greti[,1])),length(which(piedf$space.cor.P <=0.05))/length(na.omit(piedf[,1])),length(which(frass$space.cor.P <=0.05))/length(na.omit(frass[,1]))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
+barplot(c(length(intersect(which(bluti$space.cor.P <=0.05),which(bluti$space.cor >0)))/length(na.omit(bluti[,1])),
+length(intersect(which(greti$space.cor.P <=0.05),which(greti$space.cor >0)))/length(na.omit(greti[,1])),
+length(intersect(which(piedf$space.cor.P <=0.05),which(piedf$space.cor >0)))/length(na.omit(piedf[,1])),
+length(intersect(which(frass$space.cor.P <=0.05),which(frass$space.cor >0)))/length(na.omit(frass[,1])))
+,names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
 
 mtext(side=3,adj=0,"b) spatial correlation",cex=0.8,line=1)
 
-barplot(c(length(which(bluti$Ma.space.P....1 <=0.05))/length(na.omit(bluti[,1])),length(which(greti$Ma.space.P....1 <=0.05))/length(na.omit(greti[,1])),length(which(piedf$Ma.space.P....1 <=0.05))/length(na.omit(piedf[,1])),length(which(frass$Ma.space.P....1 <=0.05))/length(na.omit(frass[,1]))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
+barplot(c(length(intersect(which(bluti$Ma.space.P....1 <=0.05),which(bluti$MA.space <1)))/length(na.omit(bluti[,1])),
+length(intersect(which(greti$Ma.space.P....1 <=0.05),which(greti$MA.space <1)))/length(na.omit(greti[,1])),
+length(intersect(which(piedf$Ma.space.P....1 <=0.05),which(piedf$MA.space <1)))/length(na.omit(piedf[,1])),
+length(intersect(which(frass$Ma.space.P....1 <=0.05),which(frass$MA.space < 1)))/length(na.omit(frass[,1])))
+,names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
 
 mtext(side=3,adj=0,"c) spatial major axis",cex=0.8,line=1)
 
-barplot(c(length(which(bluti$time.cor.P <=0.05))/length(na.omit(bluti[,1])),length(which(greti$time.cor.P <=0.05))/length(na.omit(greti[,1])),length(which(piedf$time.cor.P <=0.05))/length(na.omit(piedf[,1])),length(which(frass$time.cor.P <=0.05))/length(na.omit(frass[,1]))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
+
+barplot(c(length(intersect(which(bluti$time.cor.P <=0.05),which(bluti$time.cor >0)))/length(na.omit(bluti[,1])),
+length(intersect(which(greti$time.cor.P <=0.05),which(greti$time.cor >0)))/length(na.omit(greti[,1])),
+length(intersect(which(piedf$time.cor.P <=0.05),which(piedf$time.cor >0)))/length(na.omit(piedf[,1])),
+length(intersect(which(frass$time.cor.P <=0.05),which(frass$time.cor > 0)))/length(na.omit(frass[,1])))
+,names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
 
 mtext(side=3,adj=0,"d) temporal correlation",cex=0.8,line=1)
 
-barplot(c(length(which(bluti$Ma.time.p....1 <=0.05))/length(na.omit(bluti[,1])),length(which(greti$Ma.time.p....1 <=0.05))/length(na.omit(greti[,1])),length(which(piedf$Ma.time.p....1 <=0.05))/length(na.omit(piedf[,1])),length(which(frass$Ma.time.p....1 <=0.05))/length(na.omit(frass[,1]))),names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
+barplot(c(length(intersect(which(bluti$Ma.time.p....1 <=0.05),which(bluti$Ma.time <1)))/length(na.omit(bluti[,1])),
+length(intersect(which(greti$Ma.time.p....1 <=0.05),which(greti$Ma.time <1)))/length(na.omit(greti[,1])),
+length(intersect(which(piedf$Ma.time.p....1 <=0.05),which(piedf$Ma.time <1)))/length(na.omit(piedf[,1])),
+length(intersect(which(frass$Ma.time.p....1 <=0.05),which(frass$Ma.time < 1)))/length(na.omit(frass[,1])))
+,names.arg=c("bt","gt","pf","cat"),ylim=c(0,1),col=c("blue","yellow","black","dark green"),las=1,ylab="Power")
+
 
 mtext(side=3,adj=0,"e) temporal major axis",cex=0.8,line=1)
+
 
