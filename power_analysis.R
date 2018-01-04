@@ -45,13 +45,13 @@ con_5kmvar,conres_5kmcov,res_5kmvar,con_tempvar,conres_tempcov,res_tempvar,con_r
 	speciesdata<-droplevels(speciesdata)
 
 	#Simulated effect sizes
-	#latitudinal slope difference that is sufficient to generate 1 days difference per degree latitude
+	#latitudinal slope difference that is sufficient to generate 2 days difference per degree latitude
 
-	#spatial slope - MA slope of 0.6 compared against slope of 1
-	#spatial slope - correlation of 0.8
+	#spatial slope - MA slope of 0.55 compared against slope of 1
+	#spatial slope - correlation of 0.9
 
-	#temporal slope - MA slope of 0.6 compared against slope of 1
-	#temporal slope - correlation of 0.8
+	#temporal slope - MA slope of 0.55 compared against slope of 1
+	#temporal slope - correlation of 0.9
 
 	store<-matrix(nrow=iteration,ncol=14,NA)
 
